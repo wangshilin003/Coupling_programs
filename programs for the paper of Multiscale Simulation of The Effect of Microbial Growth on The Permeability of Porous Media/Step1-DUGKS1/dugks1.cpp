@@ -87,7 +87,7 @@ double g_plus[M][N][Qx][Qy]; // f_bar^+ at the cell center
 double con[M][N]; //cell center
 double xg_face[N1][Qx][Qy], yg_face[M1][Qx][Qy];      // cell interface
 
-double epsilon[M][N],K[M][N],Fe[M][N],Fx[M][N],Fy[M][N]; //porosity£¬permeability¡¢structure parameters¡¢total force
+double epsilon[M][N],K[M][N],Fe[M][N],Fx[M][N],Fy[M][N]; //porosityï¼Œpermeabilityã€structure parametersã€total force
 
 double ex[Qx]={0., 1., -1.};
 double ey[Qy]={0., 1., -1.};  
@@ -102,7 +102,7 @@ double yfFxold[M][N], yfFyold[M][N],xfFxold[M][N], xfFyold[M][N];
 
 
 ////////////////////////////
-void main()
+int main()
 {
   
 	int m,readdata,mmax;
@@ -179,7 +179,7 @@ AA:
        m++;   step=m;// step (the current calculation steps from starting)
        Evol();
        gEvol();
-     {output_u_con();}//Êä³öÉú³¤µãÏà¶ÔËÙ¶È¼°Ïà¶ÔÅ¨¶È
+     {output_u_con();}//è¾“å‡ºç”Ÿé•¿ç‚¹ç›¸å¯¹é€Ÿåº¦åŠç›¸å¯¹æµ“åº¦
        if(m%1==0)
        {
          err=fabs(ux[M/2][N/2]-u_old)/u_inlet;
@@ -194,7 +194,7 @@ printf("Continue? (yes=1 no=0)\n");
   scanf("%d",&readdata);
   if(readdata) goto AA;
 
-  
+ return 0; 
 }
 
 void gks_ini()  
