@@ -84,7 +84,7 @@ double g_plus[M][N][Qx][Qy]; // f_bar^+ at the cell center
 double con[M][N]; //cell center
 double xg_face[N1][Qx][Qy], yg_face[M1][Qx][Qy];      // cell interface
 
-double epsilon[M][N],K[M][N],Fe[M][N],Fx[M][N],Fy[M][N]; //porosity£¬permeability¡¢structure parameters¡¢total force
+double epsilon[M][N],K[M][N],Fe[M][N],Fx[M][N],Fy[M][N]; //porosityÂ£Â¬permeabilityÂ¡Â¢structure parametersÂ¡Â¢total force
 
 double ex[Qx]={0., 1., -1.};
 double ey[Qy]={0., 1., -1.};  
@@ -103,7 +103,7 @@ int sjp[M][N];//microbial growth  or not, 1 microbial growth, 0 no microbial gro
 int sjcs[M][N];//attenuation times
 
 ////////////////////////////
-void main()
+int main()
 {
   
   int m,readdata,mmax;
@@ -184,7 +184,7 @@ printf("Continue? (yes=1 no=0)\n");
   scanf("%d",&readdata);
   if(readdata) goto AA;
 
-  
+  return 0;
 }
 
 void gks_ini()  
